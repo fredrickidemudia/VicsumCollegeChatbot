@@ -23,9 +23,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0mncetrgqgts+&ps81mje&1w1tob-)%ux^$3aa3j2vax8q7g_e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["*", "vicsumcollegechatbot.up.railway.app"]
+
+
+DEBUG = False  # make sure this is False in production
+
+ALLOWED_HOSTS = [
+    "vicsumcollegechatbot.up.railway.app",
+    "127.0.0.1",
+    "localhost"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://vicsumcollegechatbot.up.railway.app",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000"
+]
+
 
 
 # Application definition
@@ -115,10 +129,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://vicsumcollegechatbot.up.railway.app",
-]
 
+
+# settings.py
 
 
 # Static files (CSS, JavaScript, Images)
