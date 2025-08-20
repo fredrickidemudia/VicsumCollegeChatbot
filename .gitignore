@@ -1,0 +1,14 @@
+# Ignore environment variables
+.env
+
+# Ignore python cache
+__pycache__/
+
+# Ignore virtual environment
+venv/
+
+# Ignore IDE settings
+.vscode/
+
+backup-repo/
+
