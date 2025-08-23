@@ -61,6 +61,39 @@
 .vicsum-logo {
     width: 80px;
 }
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.parent-form {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 300px; /* Set a height for the parent */
+}
 </style>
 
 </head>
@@ -78,14 +111,31 @@
         </div>
 
             
-        
-            <img class="itgen-logo" src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN logo">
-            <img class="vicsum-logo" src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School logo">
+            <!-- <div>
+            <div><img class="itgen-logo" src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN logo"></div>
+            <div><img class="vicsum-logo" src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School logo"></div>
+            <div>love</div>
+            </div> -->
 
-            <h3>AI Chatbot - Students' Summer Coding and AI Class</h3>
-            <h4 style="color:rgb(236, 18, 218)">Powered By - ITGEN Solutions</h4>
+            <div class="parent">
+                <div class="image-container">
+                    <img src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School Logo">
+                <p class="caption">Vicsum Schools</p>
+                </div>
+                <div class="image-container">
+                    <img src="{% static 'chatbot/images/itgen.png' %}" alt="itgen-logo">
+                <p class="caption">ITGEN Solutions</p>
+                </div>
+                <div class="image-container">
+                    <img src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN Facebook Page">
+                <p class="caption">Like Us on Facebook</p>
+            </div>
 
- 
+            <div class="parent-form">
+                <h3>AI Chatbot - Students' Summer Coding and AI Class</h3>
+                <h4 style="color:rgb(236, 18, 218)">Powered By - ITGEN Solutions</h4>
+
+    
                 <form method="post">
                     {% csrf_token %}
                     <textarea name="message" placeholder="Ask me anything..." required>{{ user_message }}</textarea>
@@ -99,7 +149,7 @@
                 </div>
                 {% endif %}
         
-    
+            </div>
         
     </div>
 
