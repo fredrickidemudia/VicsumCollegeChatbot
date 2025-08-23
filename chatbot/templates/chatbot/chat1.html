@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Chatbot - ITGEN Summar Coding Class</title>
+    <link rel="stylesheet" href="{% static 'chatbot/css/style.css' %}">
+
+    <script>
+function scrollToChat() {
+    var chatBox = document.getElementById('chatbot-2');
+    if(chatBox) {
+        // Smoothly scroll to the bottom
+        chatBox.scrollTo({
+            top: chatBox.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+}
+</script>
+
+
+   <style>
+
+    .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            font-size: 14px;
+            }
+
+    /* Main header container with background image */
+.header {
+  position: relative;
+  height: 200px;
+  background-image: url("{% static 'chatbot/images/banner2.png' %}");
+ /* background-size: cover; */
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Transparent overlay div */
+.header-overlay {
+  position: absolute;
+  top: 60px;
+  margin-left: 100;
+  width: 70%;
+  height: 40%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.second-div {
+    width: auto;
+    height: 100pxpx;
+    background-color: yellow;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.itgen-logo {
+    width: 100px;
+}
+
+.vicsum-logo {
+    width: 80px;
+}
+
+
+</style>
+</head>
+<body onload="scrollToChat()">
+     <div class="container">
+         
+        <div class="first-div">
+    <div class="header">
+      <div class="header-overlay">
+        🌟 Chatbot - Vicsum Schools 🌟
+      </div>
+   </div>
+
+
+<div>
+    <img class="itgen-logo" src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN logo">
+    <img class="vicsum-logo" src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School logo">
+</div>
+
+
+    <div class="chat-container">
+        
+
+        <h1>AI Chatbot - Students' Summar Coding and AI Class</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="message" placeholder="Ask me anything..." required>{{ user_message }}</textarea>
+            <button type="submit">Send</button>
+        </form>
+
+        {% if user_message %}
+        <div class="chat-box chatbot-2">
+            <p><strong>You:</strong> {{ user_message }}</p>
+            <p><strong>Bot:</strong> {{ bot_response }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+
+    
+</body>
+</html>
