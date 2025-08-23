@@ -46,13 +46,13 @@
   box-sizing: border-box;
 }
 
-.second-div {
+/* .second-div {
     width: auto;
     height: 100pxpx;
     background-color: yellow;
     margin-bottom: 10px;
     padding: 10px;
-}
+} */
 
 .itgen-logo {
     width: 100px;
@@ -88,11 +88,14 @@
   text-align: center;
 }
 
-.parent-form {
+.parent-form div {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  height: 300px; /* Set a height for the parent */
+  height: 500px; 
+  height: auto; /* Set a height for the parent */
+  /* background-color: red; */
+
 }
 </style>
 
@@ -100,9 +103,9 @@
 
 
 <body onload="scrollToChat()">
+
     <div class="container">
                 
-            
         <div class="header">
             <div class="header-overlay">
                 🌟 Chatbot - Vicsum School🌟
@@ -111,13 +114,13 @@
         </div>
 
             
-            <!-- <div>
-            <div><img class="itgen-logo" src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN logo"></div>
-            <div><img class="vicsum-logo" src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School logo"></div>
-            <div>love</div>
-            </div> -->
+            
+            <img class="itgen-logo" src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN logo">
+            <img class="vicsum-logo" src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School logo">
+           <a href="https://www.facebook.com/share/p/16p5BQAFNz/"><img class="vicsum-logo" src="{% static 'chatbot/images/itgen_facebook.png' %}" alt="Vicsum School logo"></a>
+            
 
-            <div class="parent">
+            <!-- <div class="parent">
                 <div class="image-container">
                     <img src="{% static 'chatbot/images/vicsum_logo.png' %}" alt="Vicsum School Logo">
                 <p class="caption">Vicsum Schools</p>
@@ -129,12 +132,13 @@
                 <div class="image-container">
                     <img src="{% static 'chatbot/images/itgen.png' %}" alt="ITGEN Facebook Page">
                 <p class="caption">Like Us on Facebook</p>
-            </div>
+            </div> -->
 
-            <div class="parent-form">
+            <div>
+                <div>
                 <h3>AI Chatbot - Students' Summer Coding and AI Class</h3>
                 <h4 style="color:rgb(236, 18, 218)">Powered By - ITGEN Solutions</h4>
-
+                </div>
     
                 <form method="post">
                     {% csrf_token %}
